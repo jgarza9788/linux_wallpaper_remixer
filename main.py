@@ -5,12 +5,64 @@ from Config import Config
 from io import StringIO
 import logMan as lm
 
+# from PIL import Image, ImageFilter, ImageOps
+
 # this is the main DIR
 DIR = os.path.dirname(os.path.realpath(__file__))
 
 # global variables
 CONFIG = None
 LOGGER = None
+
+# def stylize_icon(
+#     input_path,
+#     output_path,
+#     icon_color=(255, 0, 0, 255),   # Red
+#     stroke_color=(0, 0, 0, 255),   # Black
+#     stroke_width=4,
+#     shadow_offset=(6, 6),
+#     shadow_blur=8,
+#     shadow_color=(0, 0, 0, 128)    # Semi-transparent black
+# ):
+#     # Load the image
+#     img = Image.open(input_path).convert("RGBA")
+    
+#     # Create a mask from the alpha channel
+#     alpha = img.getchannel("A")
+    
+#     # Recolor white parts of the image to the desired icon color
+#     # (Assumes icon is white and background is transparent)
+#     img_colored = Image.new("RGBA", img.size, icon_color)
+#     img_colored.putalpha(alpha)
+
+#     # Create stroke by expanding the mask and coloring it
+#     stroke_mask = alpha.point(lambda p: 255 if p > 0 else 0)
+#     stroke = ImageOps.expand(stroke_mask, border=stroke_width, fill=0)
+#     stroke = stroke.filter(ImageFilter.GaussianBlur(1))
+#     stroke_img = Image.new("RGBA", stroke.size, stroke_color)
+#     stroke_img.putalpha(stroke)
+
+#     # Create shadow
+#     shadow = Image.new("RGBA", img.size, (0, 0, 0, 0))
+#     shadow_mask = alpha.copy()
+#     shadow_mask = shadow_mask.filter(ImageFilter.GaussianBlur(shadow_blur))
+#     shadow_img = Image.new("RGBA", img.size, shadow_color)
+#     shadow_img.putalpha(shadow_mask)
+
+#     # Prepare final image
+#     final_size = (
+#         max(img.size[0] + shadow_offset[0] + stroke_width * 2, stroke.size[0]),
+#         max(img.size[1] + shadow_offset[1] + stroke_width * 2, stroke.size[1])
+#     )
+#     final = Image.new("RGBA", final_size, (0, 0, 0, 0))
+
+#     # Paste layers: shadow, stroke, icon
+#     final.paste(shadow_img, shadow_offset, shadow_img)
+#     final.paste(stroke_img, (0, 0), stroke_img)
+#     final.paste(img_colored, (stroke_width, stroke_width), img_colored)
+
+#     # Save result
+#     final.save(output_path)
 
 
 def CreateWallpapers():
@@ -29,13 +81,24 @@ def CreateWallpapers():
 
     for p in CONFIG.data['presets']:
 
-
-    
         preset = list(product([p['name']],p['logos'],p['basecolors'],p['colors'],p['sizes']))
 
         print(preset)
 
         for z in preset:
+
+            # stylize_icon(
+            #     input_path=f"./logos/{z[1]}",
+            #     output_path=f"./temp/logo.png",
+            #     icon_color=(0, 150, 255, 255),  # Blue
+            #     stroke_color=(255, 255, 255, 255),  # White stroke
+            #     stroke_width=50,
+            #     shadow_offset=(0, 100),
+            #     shadow_blur=0,
+            #     shadow_color=(0, 0, 0, 180)  # Darker shadow
+            # )
+
+            # return 0
 
             template = ''
             with open(CONFIG.data['template_path'], 'r', encoding='utf8') as f:

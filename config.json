@@ -209,6 +209,53 @@
                 // [3840, 2160],
                 [1920, 1080]
             ]
+        },
+        {
+            "name": "monokai",
+            "logos": [
+                "numbat.png"
+            ],
+            "basecolors": [
+                "#272822",
+                "#3e3d32",
+                "#75715e",
+                "#f8f8f2"
+            ],
+            "colors": [
+                "#f92672",
+                "#fd971f",
+                "#f4bf75",
+                "#a6e22e",
+                "#66d9ef",
+                "#ae81ff"
+            ],
+            "sizes": [
+                // [3840, 2160],
+                [1920, 1080]
+            ]
+        },
+        {
+            "name": "everforest",
+            "logos": [
+                "numbat.png"
+            ],
+            "basecolors": [
+                "#2b3339",  // background
+                "#374145",  // selection/alternate background
+                "#7fbbb3",  // comments or muted
+                "#d3c6aa"   // foreground
+            ],
+            "colors": [
+                "#e67e80",  // red
+                "#dbbc7f",  // yellow/orange
+                "#e69875",  // orange
+                "#a7c080",  // green
+                "#83c092",  // aqua/blue
+                "#d699b6"   // pink/purple
+            ],
+            "sizes": [
+                [1920, 1080]
+            ]
         }
     ]
 
