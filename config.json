@@ -4,6 +4,29 @@
 
     "presets": [
         {
+            "name": "TokyoNight",
+            "logos": [
+                "numbat.png"
+            ],
+            "basecolors": [
+                "#16161f",  // background (inferred from Tokyo Night base)
+                "#1a1b27",  // selection/alternate background (from list.inactiveSelectionBackground)
+                "#1e2336",  // comments or muted (from multiple muted UI elements)
+                "#23283d"   // foreground (used for active text and status bar)
+            ],
+            "colors": [
+                "#f7768e",  // red (keep traditional TokyoNight accent)
+                "#e0af68",  // yellow/orange
+                "#ff9e64",  // orange
+                "#9ece6a",  // green
+                "#2ac3de",  // blue
+                "#bb9af7"   // purple
+            ],
+            "sizes": [
+                [1920, 1080]
+            ]
+        },
+        {
             "name": "rosepine",
             "logos": [
                 "numbat.png"
